@@ -1,5 +1,8 @@
 package hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.backend.models
 
+import hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.backend.constants.Enums
+import hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.backend.constants.ErrorLog
+
 class Response<T> {
     var code: Int
     var message: String

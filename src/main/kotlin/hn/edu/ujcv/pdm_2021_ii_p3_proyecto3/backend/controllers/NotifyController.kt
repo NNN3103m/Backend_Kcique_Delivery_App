@@ -4,6 +4,7 @@ import hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.backend.constants.ApiConfig.NotifyAp
 import hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.backend.constants.ApiConfig.NotifyApi.notifyUrl
 import hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.backend.models.Response
 import hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.backend.models.notifications.NotificationModel
+import hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.backend.services.NotifyService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody

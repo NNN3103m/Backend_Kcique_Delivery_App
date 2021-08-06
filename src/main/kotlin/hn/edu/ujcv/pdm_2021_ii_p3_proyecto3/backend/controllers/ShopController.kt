@@ -4,6 +4,7 @@ import hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.backend.constants.ApiConfig.ShopApi.
 import hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.backend.models.ConfigurationModel
 import hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.backend.models.Response
 import hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.backend.models.ShopConfigurationModel
+import hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.backend.services.ShopService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.*
 

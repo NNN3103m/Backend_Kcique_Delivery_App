@@ -3,6 +3,7 @@ package hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.backend.controllers
 import hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.backend.constants.ApiConfig.ItemApi.BASE_URL
 import hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.backend.models.ItemModel
 import hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.backend.models.Response
+import hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.backend.services.ItemService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.*
 

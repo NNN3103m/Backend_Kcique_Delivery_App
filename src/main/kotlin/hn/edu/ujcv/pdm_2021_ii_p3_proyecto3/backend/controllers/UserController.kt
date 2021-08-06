@@ -5,6 +5,7 @@ import hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.backend.models.UserModel
 import hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.backend.models.UserPlaceModel
 import hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.backend.models.UserShopListModel
 import hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.backend.models.notifications.UserNotificationModel
+import hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.backend.services.UserService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.*
 

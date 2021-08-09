@@ -11,7 +11,7 @@ object ApiConfig {
 
     object ItemApi {
         const val BASE_URL = "/menu"
-        const val insertItem = EMPTY_QUOTES
+        const val insertItem = "post/{itemId}"
         const val getItemsByShopId = "/shop/{shopId}"
         const val getItemsByName = "/{placeId}/{itemName}"
         const val updateItem = EMPTY_QUOTES

@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*
 class ItemController {
     @Autowired
     var itemService: ItemService? = null
-    @PostMapping("/post")
+    @PostMapping("post/{itemId}")
     fun insertItem(@RequestBody itemModelList: List<ItemModel?>?): Response<String?>? {
         return itemService!!.insertItem(itemModelList)
     }

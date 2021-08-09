@@ -36,6 +36,15 @@ class OrderModel {
                 '}'
     }
 
+    fun getOrderStatus(): Any {
+        return "order status" + orderStatus
+    }
+
+    @JvmName("getId1")
+    fun getId(): Int {
+        return 1
+    }
+
     init {
         userModel = UserModel()
         shopModel = ShopModel()

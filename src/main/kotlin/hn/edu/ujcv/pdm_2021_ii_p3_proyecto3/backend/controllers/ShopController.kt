@@ -4,37 +4,39 @@ import hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.backend.constants.ApiConfig.ShopApi.
 import hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.backend.models.ConfigurationModel
 import hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.backend.models.Response
 import hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.backend.models.ShopConfigurationModel
-import hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.backend.services.ShopService
+import hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.backend.services.interfaces.ShopService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.*
 
 @RestController
 @RequestMapping(value = [BASE_URL])
 class ShopController {
+
     @Autowired
     var shopService: ShopService? = null
-    @PostMapping(value = [insertShop])
+
+    @PostMapping("/post")
     fun insertShop(@RequestBody configurationModel: ConfigurationModel?): Response<String> {
-        return shopService!!.insertShop(configurationModel)
+        return this.shopService!!.insertShop(configurationModel)
     }
 
-    @GetMapping(value = [getShopById])
-    fun getShopById(@PathVariable("shopId") shopId: Int?): Response<ShopConfigurationModel> {
+    @GetMapping("/get")
+    fun getShopById(@PathVariable("shopId") shopId: Int?): Response<ShopConfigurationModel?>? {
         return shopService!!.getShopById(shopId)
     }
 
-    @GetMapping(value = [getShopsByPlaceId])
-    fun getShopsByPlaceId(@PathVariable("placeId") placeId: Int?): Response<List<ShopConfigurationModel>> {
+    @GetMapping("/getByPlaceId")
+    fun getShopsByPlaceId(@PathVariable("placeId") placeId: Int?): Response<List<ShopConfigurationModel?>?>? {
         return shopService!!.getShopByPlaceId(placeId)
     }
 
-    @PatchMapping(value = [updateShopConfiguration])
-    fun updateShopConfiguration(@RequestBody configurationModel: ConfigurationModel?): Response<String> {
+    @PutMapping("put/{id}")
+    fun updateShopConfiguration(@RequestBody configurationModel: ConfigurationModel?): Response<String?>? {
         return shopService!!.updateShopConfiguration(configurationModel)
     }
 
-    @DeleteMapping(value = [deleteShop])
-    fun deleteShop(@PathVariable("shopId") shopId: Int?): Response<String> {
+    @DeleteMapping("/delete/{id}")
+    fun deleteShop(@PathVariable("shopId") shopId: Int?): Response<String?>? {
         return shopService!!.deleteShopById(shopId)
     }
 }

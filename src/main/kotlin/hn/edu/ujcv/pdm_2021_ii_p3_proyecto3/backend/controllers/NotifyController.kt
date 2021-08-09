@@ -4,7 +4,7 @@ import hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.backend.constants.ApiConfig.NotifyAp
 import hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.backend.constants.ApiConfig.NotifyApi.notifyUrl
 import hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.backend.models.Response
 import hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.backend.models.notifications.NotificationModel
-import hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.backend.services.NotifyService
+import hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.backend.services.interfaces.NotifyService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
@@ -17,12 +17,12 @@ class NotifyController {
     @Autowired
     var notifyService: NotifyService? = null
     @PostMapping(value = [notifyUrl])
-    fun notifyNewUrl(@RequestBody notificationModel: NotificationModel?): Response<String> {
+    fun notifyNewUrl(@RequestBody notificationModel: NotificationModel?): Response<String?>? {
         return notifyService!!.sendGlobalNotification(notificationModel)
     }
 
     @PostMapping(value = [notifyNewArrival])
-    fun notifyNewArrival(@RequestBody notificationModel: NotificationModel?): Response<String> {
+    fun notifyNewArrival(@RequestBody notificationModel: NotificationModel?): Response<String?>? {
         return notifyService!!.sendGlobalNotification(notificationModel)
     }
 }

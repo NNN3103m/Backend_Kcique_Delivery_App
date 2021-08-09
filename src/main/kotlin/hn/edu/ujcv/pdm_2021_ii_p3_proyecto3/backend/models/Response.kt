@@ -30,6 +30,23 @@ class Response<T> {
                 '}'
     }
 
+    fun setMessage(itemDetailNotUpdated: T): String {
+        return "item not updated"
+    }
+
+    fun setCode(idnU1207: Int): String {
+        return "Error"
+    }
+
+    fun getCode(): Any {
+        return "code here"
+    }
+
+    @JvmName("getData1")
+    fun getData(): Any {
+        return "data" + data
+    }
+
     init {
         code = ErrorLog.CodeFailure
         message = ErrorLog.Failure

@@ -5,6 +5,7 @@ class OrderItemModel {
     var itemModel: ItemModel
     var quantity: Int? = null
     var price: Double? = null
+
     override fun toString(): String {
         return "OrderItemModel{" +
                 "orderModel=" + orderModel +

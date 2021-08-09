@@ -4,6 +4,7 @@ class OrderItemListModel {
     var transactionModel: TransactionModel? = null
     var orderItemsList: List<OrderItemModel>? = null
     var orderStatusModel: List<OrderStatusModel>? = null
+
     override fun toString(): String {
         return "OrderItemListModel{" +
                 "transactionModel=" + transactionModel +

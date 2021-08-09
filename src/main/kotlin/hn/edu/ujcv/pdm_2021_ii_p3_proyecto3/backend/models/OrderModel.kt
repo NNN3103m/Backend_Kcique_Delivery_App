@@ -9,7 +9,7 @@ class OrderModel {
     var userModel: UserModel
     var shopModel: ShopModel
 
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy HH:mm:ss", timezone = "Asia/Kolkata")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy HH:mm:ss", timezone = "America/Chicago")
     var date: Timestamp? = null
     var orderStatus: Enums.OrderStatus? = null
     var price: Double? = null

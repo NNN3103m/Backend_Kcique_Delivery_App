@@ -7,7 +7,6 @@ class ItemModel {
     var photoUrl: String? = null
     var category: String? = null
     var shopModel: ShopModel
-    var isVeg: Int? = null
     var isAvailable: Int? = null
     override fun toString(): String {
         return "ItemModel{" +
@@ -17,7 +16,6 @@ class ItemModel {
                 ", photoUrl='" + photoUrl + '\'' +
                 ", category='" + category + '\'' +
                 ", shopModel=" + shopModel +
-                ", isVeg=" + isVeg +
                 ", isAvailable=" + isAvailable +
                 '}'
     }

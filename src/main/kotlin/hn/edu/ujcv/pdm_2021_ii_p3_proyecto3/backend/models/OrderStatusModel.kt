@@ -8,7 +8,7 @@ class OrderStatusModel {
     var orderId: Int? = null
     var orderStatus: Enums.OrderStatus? = null
 
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy HH:mm:ss", timezone = "Asia/Kolkata")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy HH:mm:ss", timezone = "America/Chicago")
     var updatedTime: Timestamp? = null
     override fun toString(): String {
         return "OrderStatusModel{" +

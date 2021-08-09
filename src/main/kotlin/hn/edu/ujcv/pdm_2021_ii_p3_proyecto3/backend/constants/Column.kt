@@ -39,7 +39,6 @@ object Column {
         const val photoUrl = "photo_url"
         const val category = "category"
         const val shopId = "shop_id"
-        const val isVeg = "is_veg"
         const val isAvailable = "is_available"
         const val isDelete = "is_delete"
     }

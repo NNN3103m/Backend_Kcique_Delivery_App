@@ -11,10 +11,10 @@ class ShopModel {
     var mobile: String? = null
     var placeModel: PlaceModel
 
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "HH:mm:ss", timezone = "Asia/Kolkata")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "HH:mm:ss", timezone = "America/Chicago")
     var openingTime: Time? = null
 
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "HH:mm:ss", timezone = "Asia/Kolkata")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "HH:mm:ss", timezone = "America/Chicago")
     var closingTime: Time? = null
     override fun toString(): String {
         return "ShopModel{" +

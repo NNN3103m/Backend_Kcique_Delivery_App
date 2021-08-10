@@ -5,8 +5,8 @@ object ApiConfig {
 
     object PlaceApi {
         const val BASE_URL = "/place"
-        const val insertPlace = EMPTY_QUOTES
-        const val getAllPlaces = EMPTY_QUOTES
+        const val insertPlace = "/post/place/"
+        const val getAllPlaces = ""
     }
 
     object ItemApi {

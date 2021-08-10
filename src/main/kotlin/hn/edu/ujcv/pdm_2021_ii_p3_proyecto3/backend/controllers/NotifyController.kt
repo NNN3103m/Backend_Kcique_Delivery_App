@@ -16,12 +16,12 @@ import org.springframework.web.bind.annotation.RestController
 class NotifyController {
     @Autowired
     var notifyService: NotifyService? = null
-    @PostMapping(value = [notifyUrl])
+    @PostMapping("/post/{notifyService}")
     fun notifyNewUrl(@RequestBody notificationModel: NotificationModel?): Response<String?>? {
         return notifyService!!.sendGlobalNotification(notificationModel)
     }
 
-    @PostMapping(value = [notifyNewArrival])
+    @PostMapping("/post/{notifyNewArrival}")
     fun notifyNewArrival(@RequestBody notificationModel: NotificationModel?): Response<String?>? {
         return notifyService!!.sendGlobalNotification(notificationModel)
     }

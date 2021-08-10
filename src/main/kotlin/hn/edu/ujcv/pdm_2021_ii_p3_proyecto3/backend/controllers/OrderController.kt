@@ -14,47 +14,47 @@ import org.springframework.web.bind.annotation.*
 class OrderController {
     @Autowired
     var orderService: OrderService? = null
-    @PostMapping(value = [insertOrder])
+    @PostMapping("/post")
     fun insertOrder(@RequestBody orderItemList: OrderItemListModel?): Response<TransactionTokenModel?>? {
         return orderService!!.insertOrder(orderItemList)
     }
 
-    @PostMapping(value = [placeOrder])
+    @PostMapping("/post/{orderId}")
     fun placeOrder(@PathVariable("orderId") orderId: Int?): Response<String?>? {
         return orderService!!.placeOrder(orderId)
     }
 
-    @GetMapping(value = [getOrderByUserId])
+    @GetMapping("/get/{userId}")
     fun getOrderByUserId(@PathVariable("userId") userId: Int?, @PathVariable("pageNum") pageNum: Int?, @PathVariable("pageCount") pageCount: Int?): Response<List<OrderItemListModel?>?>? {
         return orderService!!.getOrderByUserId(userId, pageNum, pageCount)
     }
 
-    @GetMapping(value = [getOrderBySearchQuery])
+    @GetMapping("/get/{shopId}")
     fun getOrderBySearchQuery(@PathVariable("shopId") shopId: Int?, @PathVariable("searchItem") searchItem: String?, @PathVariable("pageNum") pageNum: Int?, @PathVariable("pageCount") pageCount: Int?): Response<List<OrderItemListModel?>?>? {
         return orderService!!.getOrderBySearchQuery(shopId, searchItem, pageNum, pageCount)
     }
 
-    @GetMapping(value = [getOrderByShopIdPagination])
+    @GetMapping("/get/{shopId}")
     fun getOrderByShopIdPagination(@PathVariable("shopId") shopId: Int?, @PathVariable("pageNum") pageNum: Int?, @PathVariable("pageCount") pageCount: Int?): Response<List<OrderItemListModel?>?>? {
         return orderService!!.getOrderByShopIdPagination(shopId, pageNum, pageCount)
     }
 
-    @GetMapping(value = [getOrderByShopId])
+    @GetMapping("/get/{shopId}")
     fun getOrderByShopId(@PathVariable("shopId") shopId: Int?): Response<List<OrderItemListModel?>?>? {
         return orderService!!.getOrderByShopId(shopId)
     }
 
-    @GetMapping(value = [getOrderById])
+    @GetMapping("/get/{orderId}")
     fun getOrderById(@PathVariable("id") id: Int?): Response<OrderItemListModel?>? {
         return orderService!!.getOrderById(id)
     }
 
-    @PatchMapping(value = [updateOrderRating])
+    @PatchMapping("/put")
     fun updateOrderRating(@RequestBody orderModel: OrderModel?): Response<String?>? {
         return orderService!!.updateOrderRating(orderModel)
     }
 
-    @PatchMapping(value = [updateOrderStatus])
+    @PatchMapping("/put")
     fun updateOrderStatus(@RequestBody orderModel: OrderModel?): Response<String?>? {
         return orderService!!.updateOrderStatus(orderModel)
     }

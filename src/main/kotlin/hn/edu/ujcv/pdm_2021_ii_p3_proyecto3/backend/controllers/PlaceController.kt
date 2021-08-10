@@ -12,17 +12,17 @@ import org.springframework.web.bind.annotation.*
 class PlaceController {
     @Autowired
     var placeService: PlaceService? = null
-    @PostMapping(value = [insertPlace])
-    fun insertPlace(@RequestBody placeModel: PlaceModel?): Response<String> {
+    @PostMapping("/post")
+    fun insertPlace(@RequestBody placeModel: PlaceModel?): Response<String?>? {
         return placeService!!.insertPlace(placeModel)
     }
 
-    @get:GetMapping(value = [getAllPlaces])
-    val allPlaces: Response<List<PlaceModel>>
+    @get:GetMapping("/get")
+    val allPlaces: Response<List<PlaceModel?>?>?
         get() = placeService!!.allPlaces
 
-    @GetMapping(value = [getAllPlaces])
-    fun getAllPlaces(): Response<List<PlaceModel>> {
-        return placeService!!.allPlaces
-    }
+//    @GetMapping("/get")
+//    fun getAllPlaces(): Response<List<PlaceModel>> {
+//        return placeService!!.allPlaces
+//    }
 }

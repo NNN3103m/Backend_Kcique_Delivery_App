@@ -20,7 +20,7 @@ class ShopController {
         return this.shopService!!.insertShop(configurationModel)
     }
 
-    @GetMapping("/get")
+    @GetMapping("/get/{shopId}")
     fun getShopById(@PathVariable("shopId") shopId: Int?): Response<ShopConfigurationModel?>? {
         return shopService!!.getShopById(shopId)
     }
@@ -30,12 +30,12 @@ class ShopController {
         return shopService!!.getShopByPlaceId(placeId)
     }
 
-    @PutMapping("put/{id}")
+    @PutMapping("/put/{id}")
     fun updateShopConfiguration(@RequestBody configurationModel: ConfigurationModel?): Response<String?>? {
         return shopService!!.updateShopConfiguration(configurationModel)
     }
 
-    @DeleteMapping("/delete/{id}")
+    @DeleteMapping("/delete/{shopId}")
     fun deleteShop(@PathVariable("shopId") shopId: Int?): Response<String?>? {
         return shopService!!.deleteShopById(shopId)
     }

@@ -12,27 +12,27 @@ import org.springframework.web.bind.annotation.*
 class ItemController {
     @Autowired
     var itemService: ItemService? = null
-    @PostMapping("post/{itemId}")
+    @PostMapping("/post/{itemId}")
     fun insertItem(@RequestBody itemModelList: List<ItemModel?>?): Response<String?>? {
         return itemService!!.insertItem(itemModelList)
     }
 
-    @GetMapping(value = [getItemsByShopId])
+    @GetMapping("/get/{shopId}")
     fun getItemsByShopId(@PathVariable("shopId") shopId: Int?): Response<List<ItemModel?>?>? {
         return itemService!!.getItemsByShopId(shopId)
     }
 
-    @GetMapping(value = [getItemsByName])
+    @GetMapping("/get/{placeId}")
     fun getItemsByName(@PathVariable("placeId") placeId: Int?, @PathVariable("itemName") itemName: String?): Response<List<ItemModel?>?>? {
         return itemService!!.getItemsByName(placeId, itemName)
     }
 
-    @PatchMapping(value = [updateItem])
+    @PatchMapping("/put/{shopId}")
     fun updateItem(@RequestBody itemModelList: List<ItemModel?>?): Response<String?>? {
         return itemService!!.updateItem(itemModelList)
     }
 
-    @DeleteMapping(value = [deleteItemById])
+    @DeleteMapping("/delete/{shopId}")
     fun deleteItemById(@PathVariable("itemId") itemId: Int?): Response<String?>? {
         return itemService!!.deleteItemById(itemId)
     }

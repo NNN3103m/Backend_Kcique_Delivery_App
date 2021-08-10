@@ -15,28 +15,28 @@ import org.springframework.web.bind.annotation.*
 class UserController {
     @Autowired
     var userService: UserService? = null
-    @PostMapping(value = [loginRegisterCustomer])
+    @PostMapping("/post/{userId}")
     fun loginRegisterCustomer(@RequestBody user: UserModel?): Response<UserPlaceModel?>? {
         return userService!!.loginRegisterCustomer(user)
     }
 
-    @PostMapping(value = [verifySeller])
+    @PostMapping("/post/{userId}")
     fun verifySeller(@RequestBody user: UserModel?): Response<UserShopListModel?>? {
         return userService!!.verifySeller(user)
     }
 
     /** */
-    @PutMapping(value = [updateUser])
+    @PutMapping("/put/{userId}")
     fun updateUser(@RequestBody userModel: UserModel?): Response<String?>? {
         return userService!!.updateUser(userModel)
     }
 
-    @PutMapping(value = [updateUserNotificationToken])
+    @PutMapping("/put/{userId}")
     fun updateUserNotificationToken(@RequestBody userNotificationModel: UserNotificationModel?): Response<String?>? {
         return userService!!.updateUserNotificationToken(userNotificationModel)
     }
 
-    @PutMapping(value = [updateUserPlaceData])
+    @PutMapping("/put/{userId}")
     fun updateUserPlaceData(@RequestBody userPlaceModel: UserPlaceModel?): Response<String?>? {
         return userService!!.updateUserPlaceData(userPlaceModel)
     }

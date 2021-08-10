@@ -13,24 +13,24 @@ import org.springframework.web.bind.annotation.RequestBody
 class CustomerController {
     @Autowired
     var customerService: CustomerService? = null
-    @PostMapping(value = [loginRegisterCustomer])
+    @PostMapping("/post/{customerId}")
     fun loginRegisterCustomer(@RequestBody customer: CustomerModel?): Response<CustomerPlaceModel?>? {
         return customerService!!.loginRegisterCustomer(customer)
     }
 
 
     /** */
-    @PutMapping(value = [updateCustomer])
+    @PutMapping("/put/")
     fun updateCustomer(@RequestBody customerModel: CustomerModel?): Response<String?>? {
         return customerService!!.updateCustomer(customerModel)
     }
 
-    @PutMapping(value = [updateCustomerNotificationToken])
+    @PutMapping("/put/")
     fun updateCustomerNotificationToken(@RequestBody customerNotificationModel: CustomerNotificationModel?): Response<String?>? {
         return customerService!!.updateCustomerNotificationToken(customerNotificationModel)
     }
 
-    @PutMapping(value = [updateCustomerPlaceData])
+    @PutMapping("/put/")
     fun updateCustomerPlaceData(@RequestBody customerPlaceModel: CustomerPlaceModel?): Response<String?>? {
         return customerService!!.updateCustomerPlaceData(customerPlaceModel)
     }

@@ -24,28 +24,36 @@ class UserServiceImpl : UserService {
     }
 
     override fun updateUser(userModel: UserModel?): Response<String?>? {
-        var response: Response<String> = Response()
-        try {
-            response = userDao?.updateUser(userModel) ?:
-        } catch (e: Exception) {
-            response.setCode(ErrorLog.UDNU1157)
-            response.setMessage(ErrorLog.UserDetailNotUpdated)
-        }
-        return response
+        TODO("Not yet implemented")
     }
+
+//    override fun updateUser(userModel: UserModel?): Response<String?>? {
+//        var response: Response<String> = Response()
+//        try {
+//            response = userDao?.updateUser(userModel) ?:
+//        } catch (e: Exception) {
+//            response.setCode(ErrorLog.UDNU1157)
+//            response.setMessage(ErrorLog.UserDetailNotUpdated)
+//        }
+//        return response
+//    }
 
     override fun updateUserNotificationToken(userNotificationModel: UserNotificationModel?): Response<String?>? {
         return userDao?.updateUserNotificationToken(userNotificationModel)
     }
 
     override fun updateUserPlaceData(userPlaceModel: UserPlaceModel?): Response<String?>? {
-        var response: Response<String> = Response()
-        try {
-            response = userDao?.updateUserPlaceData(userPlaceModel) ?:
-        } catch (e: Exception) {
-            response.setCode(ErrorLog.UDNU1157)
-            response.setMessage(ErrorLog.UserDetailNotUpdated)
-        }
-        return response
+        TODO("Not yet implemented")
     }
+
+//    override fun updateUserPlaceData(userPlaceModel: UserPlaceModel?): Response<String?>? {
+//        var response: Response<String> = Response()
+//        try {
+//            response = userDao?.updateUserPlaceData(userPlaceModel) ?:
+//        } catch (e: Exception) {
+//            response.setCode(ErrorLog.UDNU1157)
+//            response.setMessage(ErrorLog.UserDetailNotUpdated)
+//        }
+//        return response
+//    }
 }

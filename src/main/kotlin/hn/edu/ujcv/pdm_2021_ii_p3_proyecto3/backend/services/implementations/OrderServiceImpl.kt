@@ -21,16 +21,21 @@ class OrderServiceImpl : OrderService {
     @Autowired
     var notifyDao: NotifyDao? = null
     override fun insertOrder(orderItemListModel: OrderItemListModel?): Response<TransactionTokenModel?>? {
-        var response: Response<TransactionTokenModel> = Response()
-        try {
-            response = orderDao?.insertOrder(orderItemListModel) ?:
-        } catch (e: GenericException) {
-            response = e.getResponse() as Response<TransactionTokenModel>
-        } catch (e: Exception) {
-            System.err.println(e.javaClass.name + ": " + e.message)
-        }
-        return response
+        TODO("Not yet implemented")
     }
+//    override fun insertOrder(orderItemListModel: OrderItemListModel?):
+//            Response<TransactionTokenModel?>?
+//            {
+       // var response: Response<TransactionTokenModel> = Response()
+//        try {
+//            response = orderDao?.insertOrder(orderItemListModel) ?:
+//        } catch (e: GenericException) {
+//            response = e.getResponse() as Response<TransactionTokenModel>
+//        } catch (e: Exception) {
+//            System.err.println(e.javaClass.name + ": " + e.message)
+//        }
+//        return response
+//    }
 
     override fun placeOrder(orderId: Int?): Response<String?>? {
         val response: Response<String?>? = orderDao?.placeOrder(orderId)
@@ -75,8 +80,8 @@ class OrderServiceImpl : OrderService {
         try {
             if (response != null) {
                 if (response.getCode().equals(ErrorLog.CodeSuccess)) if (response != null) {
-                    response.getData().getTransactionModel()
-                        .getOrderModel().getUserModel().setNotificationToken(null)
+//                    response.getData().getTransactionModel()
+//                        .getOrderModel().getUserModel().setNotificationToken(null)
                 }
             }
         } catch (e: Exception) {

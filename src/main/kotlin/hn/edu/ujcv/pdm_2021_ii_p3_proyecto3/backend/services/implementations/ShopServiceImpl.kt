@@ -14,16 +14,19 @@ class ShopServiceImpl : ShopService {
     @Autowired
     var shopDao: ShopDao? = null
     override fun insertShop(configurationModel: ConfigurationModel?): Response<String> {
-        var response: Response<String> = Response()
-        try {
-            response = shopDao?.insertShop(configurationModel) ?:
-        } catch (e: GenericException) {
-            response = e.getResponse() as Response<String>
-        } catch (e: Exception) {
-            System.err.println(e.javaClass.name + ": " + e.message)
-        }
-        return response
+        TODO("Not yet implemented")
     }
+//    override fun insertShop(configurationModel: ConfigurationModel?): Response<String> {
+//        var response: Response<String> = Response()
+//        try {
+//            response = shopDao?.insertShop(configurationModel) ?:
+//        } catch (e: GenericException) {
+//            response = e.getResponse() as Response<String>
+//        } catch (e: Exception) {
+//            System.err.println(e.javaClass.name + ": " + e.message)
+//        }
+//        return response
+//    }
 
     override fun getShopById(shopId: Int?): Response<ShopConfigurationModel?>? {
         return shopDao?.getShopById(shopId)

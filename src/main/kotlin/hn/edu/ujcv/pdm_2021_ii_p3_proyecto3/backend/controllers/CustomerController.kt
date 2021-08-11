@@ -9,12 +9,13 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.PutMapping
 import org.springframework.web.bind.annotation.RequestBody
+import javax.validation.Valid
 
 class CustomerController {
     @Autowired
     var customerService: CustomerService? = null
     @PostMapping("/post/{customerId}")
-    fun loginRegisterCustomer(@RequestBody customer: CustomerModel?): Response<CustomerPlaceModel?>? {
+    fun loginRegisterCustomer(@Valid @RequestBody customer: CustomerModel?): Response<CustomerPlaceModel?>? {
         return customerService!!.loginRegisterCustomer(customer)
     }
 

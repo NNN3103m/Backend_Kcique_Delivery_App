@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
+import javax.validation.Valid
 
 //@RestController
 //@RequestMapping(BASE_URL)
@@ -17,7 +18,7 @@ class NotifyController {
     @Autowired
     var notifyService: NotifyService? = null
     @PostMapping("/post/{notifyService}")
-    fun notifyNewUrl(@RequestBody notificationModel: NotificationModel?): Response<String?>? {
+    fun notifyNewUrl(@Valid @RequestBody notificationModel: NotificationModel?): Response<String?>? {
         return notifyService!!.sendGlobalNotification(notificationModel)
     }
 

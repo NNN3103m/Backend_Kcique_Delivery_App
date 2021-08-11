@@ -7,6 +7,7 @@ import hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.backend.models.ShopConfigurationMode
 import hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.backend.services.interfaces.ShopService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.*
+import javax.validation.Valid
 
 //@RestController
 //@RequestMapping(value = [BASE_URL])
@@ -16,7 +17,7 @@ class ShopController {
     var shopService: ShopService? = null
 
     @PostMapping("/post")
-    fun insertShop(@RequestBody configurationModel: ConfigurationModel?): Response<String> {
+    fun insertShop(@Valid @RequestBody configurationModel: ConfigurationModel?): Response<String> {
         return this.shopService!!.insertShop(configurationModel)
     }
 

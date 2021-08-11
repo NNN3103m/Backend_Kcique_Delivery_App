@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController
 //@RestController
 //@RequestMapping
 class TestController {
-    @GetMapping(value = [EMPTY_QUOTES])
+    @GetMapping("/get/zinger")
     fun checkSetup(): String {
         var response = "<h1>Welcome to <span style=\"color:#ff4141;\">Zinger</span> Framework!!!</h1> "
         response += "<h2>All set</h2><br/><br/>"

@@ -8,14 +8,15 @@ import hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.backend.models.TransactionTokenModel
 import hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.backend.services.interfaces.OrderService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.*
+import javax.validation.Valid
 
 //@RestController
 //@RequestMapping(BASE_URL)
 class OrderController {
     @Autowired
     var orderService: OrderService? = null
-    @PostMapping("/post")
-    fun insertOrder(@RequestBody orderItemList: OrderItemListModel?): Response<TransactionTokenModel?>? {
+    @PostMapping("/post/{orderId}")
+    fun insertOrder(@Valid @RequestBody orderItemList: OrderItemListModel?): Response<TransactionTokenModel?>? {
         return orderService!!.insertOrder(orderItemList)
     }
 

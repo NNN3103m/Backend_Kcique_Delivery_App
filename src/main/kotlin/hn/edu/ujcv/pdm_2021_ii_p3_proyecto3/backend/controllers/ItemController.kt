@@ -6,6 +6,7 @@ import hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.backend.models.Response
 import hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.backend.services.interfaces.ItemService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.*
+import javax.validation.Valid
 
 //@RestController
 //@RequestMapping(value = [BASE_URL])
@@ -13,7 +14,7 @@ class ItemController {
     @Autowired
     var itemService: ItemService? = null
     @PostMapping("/post/{itemId}")
-    fun insertItem(@RequestBody itemModelList: List<ItemModel?>?): Response<String?>? {
+    fun insertItem(@Valid @RequestBody itemModelList: List<ItemModel?>?): Response<String?>? {
         return itemService!!.insertItem(itemModelList)
     }
 

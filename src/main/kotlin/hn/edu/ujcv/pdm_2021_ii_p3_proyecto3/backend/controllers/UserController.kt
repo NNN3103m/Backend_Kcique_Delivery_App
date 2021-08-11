@@ -9,6 +9,7 @@ import hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.backend.models.notifications.UserNot
 import hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.backend.services.interfaces.UserService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.*
+import javax.validation.Valid
 
 //@RestController
 //@RequestMapping(BASE_URL)
@@ -16,7 +17,7 @@ class UserController {
     @Autowired
     var userService: UserService? = null
     @PostMapping("/post/{userId}")
-    fun loginRegisterCustomer(@RequestBody user: UserModel?): Response<UserPlaceModel?>? {
+    fun loginRegisterCustomer(@Valid @RequestBody user: UserModel?): Response<UserPlaceModel?>? {
         return userService!!.loginRegisterCustomer(user)
     }
 

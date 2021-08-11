@@ -5,26 +5,27 @@ import hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.backend.models.TransactionModel
 import hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.backend.services.interfaces.TransactionService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.*
+import javax.validation.Valid
 
 class TransactionController {
     @Autowired
     var transactionService: TransactionService? = null
 
-    @PostMapping()
-    fun insertTransaction(@RequestBody transactionModel: TransactionModel?): Response<String?>? {
+    @PostMapping("/post/{transactionId}")
+    fun insertTransaction(@Valid @RequestBody transactionModel: TransactionModel?): Response<String?>? {
         return transactionService!!.insertTransaction(transactionModel)
     }
-    @GetMapping()
+    @GetMapping("/get/{transactionId}")
     fun getSeller(@RequestBody transactionModel: TransactionModel?): Response<String?>? {
         return transactionService!!.getTransactionId(transactionModel)
     }
 
-    @PutMapping()
+    @PutMapping("/put/{transactionId}")
     fun updateSeller(@RequestBody transactionModel: TransactionModel?): Response<String?>? {
         return transactionService!!.updateTransaction(transactionModel)
     }
 
-    @DeleteMapping()
+    @DeleteMapping("/delete/{transactionId}")
     fun deleteSeller(@RequestBody transactionModel: TransactionModel?): Response<String?>? {
         return transactionService!!.deleteTransaction(transactionModel)
     }

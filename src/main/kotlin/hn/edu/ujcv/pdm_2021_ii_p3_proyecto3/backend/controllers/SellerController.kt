@@ -6,26 +6,27 @@ import hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.backend.models.SellerModel
 import hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.backend.services.interfaces.SellerService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.*
+import javax.validation.Valid
 
 class SellerController {
     @Autowired
     var sellerService: SellerService? = null
 
-    @PostMapping()
-    fun insertSeller(@RequestBody sellerModel: SellerModel?): Response<String?>? {
+    @PostMapping("/post/{sellerId}")
+    fun insertSeller(@Valid @RequestBody sellerModel: SellerModel?): Response<String?>? {
         return sellerService!!.insertSeller(sellerModel)
     }
-    @GetMapping()
+    @GetMapping("/get/{sellerId}")
     fun getSeller(@RequestBody sellerModel: SellerModel?): Response<String?>? {
         return sellerService!!.getSellerId(sellerModel)
     }
 
-    @PutMapping()
+    @PutMapping("/put/{sellerId}")
     fun updateSeller(@RequestBody sellerModel: SellerModel?): Response<String?>? {
         return sellerService!!.updateSeller(sellerModel)
     }
 
-    @DeleteMapping()
+    @DeleteMapping("/delete/{sellerId}")
     fun deleteSeller(@RequestBody sellerModel: SellerModel?): Response<String?>? {
         return sellerService!!.deleteSeller(sellerModel)
     }

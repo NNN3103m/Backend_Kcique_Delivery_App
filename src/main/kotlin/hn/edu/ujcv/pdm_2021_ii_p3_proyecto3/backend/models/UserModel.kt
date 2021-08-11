@@ -2,6 +2,7 @@ package hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.backend.models
 
 import hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.backend.constants.Enums
 import javax.persistence.Column
+import javax.persistence.Id
 import javax.validation.constraints.Email
 import javax.validation.constraints.Max
 import javax.validation.constraints.Min
@@ -13,6 +14,7 @@ class UserModel {
     @field:Min(1)
     @field:Max(15)
     @field:NotBlank
+    @field:Id
     var id: Int? = null
 
     @Column(name = "userMobile", insertable = true, nullable = false )

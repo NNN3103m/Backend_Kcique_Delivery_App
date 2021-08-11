@@ -42,7 +42,7 @@ class AddressModel {
 
     @Column(name = "streetNumber", unique = true, insertable = true, nullable = false )
     @field:Min(1)
-    @field:Max(3)
+    @field:Max(5)
     @field:NotBlank
     var streetNumber: List<String>? = null
     

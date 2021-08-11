@@ -38,7 +38,7 @@ class OrderModel {
     @field:NotBlank
     var deliveryPrice: Double? = null
 
-    @Column(name = "deloveryLocation", insertable = true, nullable = false )
+    @Column(name = "deliveryLocation", insertable = true, nullable = false )
     @field:Min(15)
     @field:Max(65)
     @field:NotBlank

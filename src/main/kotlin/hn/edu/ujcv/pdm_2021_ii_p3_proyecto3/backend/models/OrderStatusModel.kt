@@ -5,6 +5,7 @@ import hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.backend.constants.Enums
 import java.sql.Timestamp
 import javax.persistence.Column
 import javax.persistence.GeneratedValue
+import javax.persistence.Id
 import javax.validation.constraints.Max
 import javax.validation.constraints.Min
 import javax.validation.constraints.NotBlank
@@ -14,6 +15,7 @@ class OrderStatusModel {
     @field:Min(1)
     @field:Max(15)
     @field:NotBlank
+    @field:Id
     var orderId: Int? = null
 
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy HH:mm:ss", timezone = "America/Chicago")

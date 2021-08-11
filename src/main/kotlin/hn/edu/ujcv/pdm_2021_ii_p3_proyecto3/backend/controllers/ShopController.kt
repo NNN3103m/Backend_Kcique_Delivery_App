@@ -8,8 +8,8 @@ import hn.edu.ujcv.pdm_2021_ii_p3_proyecto3.backend.services.interfaces.ShopServ
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.*
 
-@RestController
-@RequestMapping(value = [BASE_URL])
+//@RestController
+//@RequestMapping(value = [BASE_URL])
 class ShopController {
 
     @Autowired

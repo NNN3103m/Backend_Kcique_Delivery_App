@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 
-@RestController
-@RequestMapping(BASE_URL)
+//@RestController
+//@RequestMapping(BASE_URL)
 class NotifyController {
     @Autowired
     var notifyService: NotifyService? = null

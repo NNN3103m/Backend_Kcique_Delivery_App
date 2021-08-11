@@ -11,13 +11,13 @@ class TransactionTokenModel {
     @Column(name = "transactionTokenOrderId", unique = true, insertable = true, nullable = false )
     @field:Min(1)
     @field:Max(15)
-    @field:NotBlank
+    @field:NotBlank(message = "Por favor ingresar el id")
     @field:Id
     var orderId = 0
 
     @Column(name = "transactionToken", insertable = true, nullable = false )
     @field:Min(10)
     @field:Max(65)
-    @field:NotBlank(message = "")
+    @field:NotBlank(message = "Por favor ingresar el token")
     var transactionToken: String? = null
 }

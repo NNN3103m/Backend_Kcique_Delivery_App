@@ -22,28 +22,28 @@ class ItemModel {
     @Column(name = "itemId", unique = true, insertable = true, nullable = false )
     @field:Min(7)
     @field:Max(15)
-    @field:NotBlank
+    @field:NotBlank(message = "Por favor ingresar el id")
     @field:Id
     var id: Int? = null
 
-    @Column(name = "itemName", unique = false, insertable = true, nullable = false )
+    @Column(name = "itemName", insertable = true, nullable = false )
     @field:Min(2)
     @field:Max(30)
-    @field:NotBlank
+    @field:NotBlank(message = "Por favor ingresar el nombre del item")
     var name: String? = null
 
-    @Column(name = "itemPrice", unique = false, insertable = true, nullable = true )
+    @Column(name = "itemPrice", insertable = true, nullable = true )
     @field:Min(1)
     @field:Max(8)
-    @field:NotBlank
+    @field:NotBlank(message = "Por favor ingresar el precio del item")
     var price: Double? = null
 
     var photoUrl: String? = null
 
-    @Column(name = "itemCategory", unique = false, insertable = true, nullable = false )
+    @Column(name = "itemCategory", insertable = true, nullable = false )
     @field:Min(7)
     @field:Max(15)
-    @field:NotBlank
+    @field:NotBlank(message = "Por favor ingresar la categoria del item")
     var category: String? = null
 
     var shopModel: ShopModel

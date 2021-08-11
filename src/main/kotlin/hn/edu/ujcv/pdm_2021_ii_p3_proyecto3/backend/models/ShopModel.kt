@@ -13,21 +13,21 @@ class ShopModel {
     @Column(name = "shopId", unique = true, insertable = true, nullable = false )
     @field:Min(1)
     @field:Max(15)
-    @field:NotBlank
+    @field:NotBlank(message = "Por favor ingresar el id")
     @field:Id
     var id: Int? = null
 
     @Column(name = "shopName", insertable = true, nullable = false )
     @field:Min(7)
     @field:Max(65)
-    @field:NotBlank
+    @field:NotBlank(message = "Por favor ingresar el nombre de la tienda")
     var name: String? = null
 
 
     @Column(name = "shopMobileNumber", insertable = true, nullable = false )
     @field:Min(9)
     @field:Max(17)
-    @field:NotBlank
+    @field:NotBlank(message = "Por favor ingresar el telefono de la tienda")
     var mobile: String? = null
 
     var placeModel: PlaceModel

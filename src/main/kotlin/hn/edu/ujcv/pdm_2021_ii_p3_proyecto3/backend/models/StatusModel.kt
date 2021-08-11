@@ -11,14 +11,14 @@ class StatusModel {
     @Column(name = "statusOrderId", unique = true, insertable = true, nullable = false )
     @field:Min(1)
     @field:Max(15)
-    @field:NotBlank
+    @field:NotBlank(message = "Por favor ingresar el id del estado del pedido")
     @field:Id
     var statusOrderId: Int? = null
 
     @Column(name = "status", insertable = true, nullable = false )
     @field:Min(15)
     @field:Max(65)
-    @field:NotBlank
+    @field:NotBlank(message = "Por favor ingresar el estado del pedido")
     var status: String? = null
 
     override fun toString(): String {

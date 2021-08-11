@@ -12,14 +12,14 @@ class SellerModel {
     @Column(name = "sellerId", unique = true, insertable = true, nullable = false )
     @field:Min(1)
     @field:Max(15)
-    @field:NotBlank
+    @field:NotBlank(message = "Por favor ingresar el id")
     @field:Id
     var sellerId: Int? = null
 
     @Column(name = "sellerShopId", insertable = true, nullable = false )
     @field:Min(1)
     @field:Max(15)
-    @field:NotBlank(message = "")
+    @field:NotBlank(message = "Por favor ingresar el id del vendedor")
     @field:Id
     var sellerShopId: Int? = null
 

@@ -14,7 +14,7 @@ class OrderStatusModel {
     @Column(name = "orderId", unique = true, insertable = true, nullable = false )
     @field:Min(1)
     @field:Max(15)
-    @field:NotBlank
+    @field:NotBlank(message = "Por favor ingresar el id")
     @field:Id
     var orderId: Int? = null
 
@@ -22,7 +22,7 @@ class OrderStatusModel {
     @Column(name = "orderUpdatedTime", insertable = true, nullable = false )
     @field:Min(5)
     @field:Max(5)
-    @field:NotBlank
+    @field:NotBlank(message = "Por favor ingresar la hora")
     var updatedTime: Timestamp? = null
 
     var orderStatus: Enums.OrderStatus? = null

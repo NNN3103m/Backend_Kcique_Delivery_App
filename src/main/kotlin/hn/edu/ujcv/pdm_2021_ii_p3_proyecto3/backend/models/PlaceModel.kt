@@ -11,20 +11,20 @@ class PlaceModel {
     @Column(name = "placeId", unique = true, insertable = true, nullable = false )
     @field:Min(1)
     @field:Max(15)
-    @field:NotBlank
+    @field:NotBlank(message = "Por favor ingresar el id")
     @field:Id
     var id: Int? = null
 
     @Column(name = "placeName", insertable = true, nullable = false )
     @field:Min(15)
     @field:Max(65)
-    @field:NotBlank
+    @field:NotBlank(message = "Por favor ingresar el nombre del local")
     var name: String? = null
 
     @Column(name = "placeAddress", insertable = true, nullable = false )
     @field:Min(15)
     @field:Max(65)
-    @field:NotBlank
+    @field:NotBlank(message = "Por favor ingresar la direccion del local")
     var address: String? = null
 
     var iconUrl: String? = null

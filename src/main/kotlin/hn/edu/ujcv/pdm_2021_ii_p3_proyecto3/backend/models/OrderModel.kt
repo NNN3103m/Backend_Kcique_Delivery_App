@@ -35,19 +35,19 @@ class OrderModel {
     @Column(name = "deliveryPrice", insertable = true, nullable = false )
     @field:Min(1)
     @field:Max(6)
-    @field:NotBlank
+    @field:NotBlank(message = "Por favor ingresar el precio de la entrega")
     var deliveryPrice: Double? = null
 
     @Column(name = "deliveryLocation", insertable = true, nullable = false )
     @field:Min(15)
     @field:Max(65)
-    @field:NotBlank
+    @field:NotBlank(message = "Por favor ingresar el lugar de entrega")
     var deliveryLocation: String? = null
 
     @Column(name = "secretKey", unique = true, insertable = true, nullable = false )
     @field:Min(1)
     @field:Max(15)
-    @field:NotBlank
+    @field:NotBlank(message = "Por favor ingresar el codigo secreto")
     @GeneratedValue
     var secretKey: String? = null
 

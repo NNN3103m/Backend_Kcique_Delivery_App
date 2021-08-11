@@ -13,26 +13,26 @@ class UserModel {
     @Column(name = "userId", unique = true, insertable = true, nullable = false )
     @field:Min(1)
     @field:Max(15)
-    @field:NotBlank
+    @field:NotBlank(message = "Por favor ingresar el id")
     @field:Id
     var id: Int? = null
 
     @Column(name = "userMobile", insertable = true, nullable = false )
     @field:Min(9)
     @field:Max(17)
-    @field:NotBlank
+    @field:NotBlank(message = "Por favor ingresar el numero de telefono")
     var mobile: String? = null
 
     @Column(name = "userName", insertable = true, nullable = false )
     @field:Min(10)
     @field:Max(65)
-    @field:NotBlank
+    @field:NotBlank(message = "Por favor ingresar el nombre del usuario")
     var name: String? = null
 
-    @Column(name = "", insertable = true, nullable = false )
+    @Column(name = "userEmail", insertable = true, nullable = false )
     @field:Min(7)
     @field:Max(65)
-    @field:NotBlank
+    @field:NotBlank(message = "Por favor ingresar el correo electronico del usuario")
     @field:Email
     var email: String? = null
 

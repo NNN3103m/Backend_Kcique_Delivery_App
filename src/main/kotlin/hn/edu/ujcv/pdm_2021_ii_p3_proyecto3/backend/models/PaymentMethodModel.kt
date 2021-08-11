@@ -12,14 +12,14 @@ class PaymentMethodModel {
     @Column(name = "paymentId", unique = true, insertable = true, nullable = false )
     @field:Min(1)
     @field:Max(15)
-    @field:NotBlank
+    @field:NotBlank(message = "Por favor ingresar el id del metodo de pago")
     @field:Id
     var paymentId: Int? = null
 
     @Column(name = "paymentDescription", insertable = true, nullable = false )
     @field:Min(10)
     @field:Max(65)
-    @field:NotBlank
+    @field:NotBlank(message = "Por favor ingresar la descripcion del metodo de pago")
     var paymentDescription: String? = null
 
 

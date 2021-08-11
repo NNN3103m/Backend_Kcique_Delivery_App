@@ -11,20 +11,20 @@ class TransactionModel {
     @Column(name = "transactionID", unique = true, insertable = true, nullable = false )
     @field:Min(1)
     @field:Max(15)
-    @field:NotBlank(message = "")
+    @field:NotBlank(message = "Por favor ingresar el id")
     @field:Id
     var transactionId: String? = null
 
     @Column(name = "bankTransactionID", unique = true, insertable = true, nullable = false )
     @field:Min(1)
     @field:Max(15)
-    @field:NotBlank
+    @field:NotBlank(message = "Por favor ingresar el id de la transaccion bancaria")
     var bankTransactionId: String? = null
 
     @Column(name = "bankName", unique = true, insertable = true, nullable = false )
     @field:Min(5)
     @field:Max(65)
-    @field:NotBlank
+    @field:NotBlank(message = "Por favor ingresar el nombre del banco")
     var bankName: String? = null
 
 
